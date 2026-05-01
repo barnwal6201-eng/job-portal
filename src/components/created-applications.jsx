@@ -12,7 +12,7 @@ const CreatedApplications = () => {
       data: dataApplications,
       fn: fnApplications,
     } = useFetch(getApplications, {
-        user_id: user,id,
+        user_id: user?.id,
     });
 
     useEffect(() => {
@@ -26,7 +26,7 @@ const CreatedApplications = () => {
   return (
     <div className='flex flex-col gap-2'>
 
-        {job?.application?.map((application) => {
+        {dataApplications?.map((application) => {
             return (
               <ApplicationCard key={application.id} application={application} isCandidate={true} />
             );
