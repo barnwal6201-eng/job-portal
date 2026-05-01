@@ -13,7 +13,7 @@ const useFetch = (cb, options = {}) => {
         setError(null);
 
         try {
-            const supabaseAccessToken = await session.getToken();
+            const supabaseAccessToken = await session?.getToken();
 
             const response = await cb(supabaseAccessToken, options, ...args);
             setData(response);

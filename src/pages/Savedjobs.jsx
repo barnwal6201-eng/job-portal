@@ -39,7 +39,7 @@ const SavedJobs = () => {
                 />
               })
             ): (
-              <div>No Saved Jobs Found 👀</div>
+              <div className='text-center'>No Saved Jobs Found 👀</div>
             )}
           </div>
         )}
