@@ -39,12 +39,12 @@ const LandingPage = () => {
             Explore thousands of job listings or find the perfect candidate
           </p>
     </section>
-    <div className='flex gap-6 justify-center'>
+    <div className='flex flex-col sm:flex-row gap-6 justify-center'>
       <Link to='/jobs'>
-      <Button variant="blue" size="xl">Find Jobs</Button>
+      <Button variant="blue" size="xl" className='w-full sm:w-auto'>Find Jobs</Button>
       </Link>
      <Link to='/post-jobs'>
-     <Button variant="destructive" size="xl">Post a Job</Button>
+     <Button variant="destructive" size="xl" className='w-full sm:w-auto'>Post a Job</Button>
      </Link>
     </div>
      
@@ -66,7 +66,7 @@ const LandingPage = () => {
       
 
     {/* banner */}
-    <img src="/banner.jpeg" className='w-full' />
+    <img src="/banner.jpeg" className='w-full rounded-lg' />
 
     <section className='grid grid-cols-1 md:grid-cols-2 gap-4'>
       <Card>
@@ -89,16 +89,18 @@ const LandingPage = () => {
     </section>
 
     {/* Accordion */}
-    <Accordion type="single" collapsible>
-    {faqs.map((faq, index)=>{
-    return (
-    <AccordionItem key={index} value={`item-${index+1}`}>
-    <AccordionTrigger>{faq.question}</AccordionTrigger>
-    <AccordionContent>  {faq.answer} </AccordionContent>
-    </AccordionItem>
-    );
-    })}
-    </Accordion>
+    <div className='px-2 sm:px-0'>
+      <Accordion type="single" collapsible>
+      {faqs.map((faq, index)=>{
+      return (
+      <AccordionItem key={index} value={`item-${index+1}`}>
+      <AccordionTrigger>{faq.question}</AccordionTrigger>
+      <AccordionContent>  {faq.answer} </AccordionContent>
+      </AccordionItem>
+      );
+      })}
+      </Accordion>
+    </div>
   </main>
 }
 

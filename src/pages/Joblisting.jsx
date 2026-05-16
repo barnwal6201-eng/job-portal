@@ -69,18 +69,18 @@ const {
 
   return (
     <div>
-      <h1 className='gradient-title font-extrabold text-6xl sm:text-7xl text-center pb-8'>
+      <h1 className='gradient-title font-extrabold text-4xl sm:text-6xl lg:text-7xl text-center pb-8'>
         Latest Jobs</h1>
 
         {/*add filters here */}
-        <form onSubmit={handleSearch} className='flex flex-row h-14 w-full gap-2 items-center mb-3'>
+        <form onSubmit={handleSearch} className='flex flex-col sm:flex-row h-auto sm:h-14 w-full gap-2 items-center mb-3'>
          <Input
          type="text"
          placeholder="Search Jobs by Title.."
          name="search-query"
-         className="h-full flex-1 px-4 text-md"
+         className="h-12 sm:h-full flex-1 px-4 text-md"
          />
-         <Button type="submit" className="h-full sm:w-28" variant="blue">
+         <Button type="submit" className="h-12 sm:h-full w-full sm:w-28" variant="blue">
           Search
          </Button>
         </form>
@@ -117,7 +117,7 @@ const {
             </Select>
 
             <Button
-            onClick={clearFilters} variant="destructive" className="sm:w-1/2"
+            onClick={clearFilters} variant="destructive" className="w-full sm:w-auto"
             >Clear Filters</Button>
         </div>
 
@@ -126,7 +126,7 @@ const {
         )}
 
         {loadingJobs === false && (
-          <div className='mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
+          <div className='mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6'>
             {jobs?.length ? (
               jobs.map((job)=>{
                 return <JobCard key={job.id} job={job}

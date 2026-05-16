@@ -33,17 +33,17 @@ const OnBoarding = () => {
     return <BarLoader className='mb-4' width={"100%"} color='#36d7b7'/>
   }
   return (
-    <div className='flax flex-col items-center justify-center mt-32'>
-      <h2 className='gradient-title font-extrabold text-7xl sm:text-8xl tracking-tighter text-center'>
+    <div className='flex flex-col items-center justify-center mt-32'>
+      <h2 className='gradient-title font-extrabold text-5xl sm:text-7xl lg:text-8xl tracking-tighter text-center'>
         I am a...</h2>
 
-        <div className='mt-16 grid grid-cols-2 gap-4 w-full md:px-40'>
-          <Button variant="blue" className="h-36 text-2xl"
+        <div className='mt-16 grid grid-cols-2 gap-4 w-full md:px-20 lg:px-40'>
+          <Button variant="blue" className="h-24 sm:h-36 text-xl sm:text-2xl"
           onClick={()=>handleRoleSelection("candidate")}
           >
             Candidate
           </Button>
-          <Button variant="destructive" className="h-36 text-2xl"
+          <Button variant="destructive" className="h-24 sm:h-36 text-xl sm:text-2xl"
            onClick={()=>handleRoleSelection("recruiter")}
           >
             Recruiter

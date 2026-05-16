@@ -24,12 +24,12 @@ const Header = () => {
 
   return (
     <>
-      <nav className='py-4 flex justify-between items-center'>
+      <nav className='py-4 px-4 sm:px-0 flex justify-between items-center'>
         <Link to="/">
-          <img src="/logo.png" className='h-20' />
+          <img src="/logo.png" className='h-14 sm:h-20' />
         </Link>
 
-          <div className='flex gap-8'>
+          <div className='flex gap-3 sm:gap-8'>
             <SignedOut>
             <Button variant="outline" onClick ={()=> setShowSignIn(true)}>Login</Button>
             <SignUpButton />
@@ -40,7 +40,7 @@ const Header = () => {
              <Link to="/post-jobs">
             <Button variant='destructive' className='rounded-full'>
              <PenBox size={20} className='mr-2' />
-              Post a Job
+              <span className='hidden sm:inline'>Post a Job</span>
             </Button>
             </Link>
            )}
@@ -68,7 +68,7 @@ const Header = () => {
           </div>
       </nav>
         {showSignIn && (
-          <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50'
+          <div className='fixed inset-0 flex items-center justify-center bg-black/50'
           onClick={handleOverlayClick}
           >
             <SignIn 

@@ -87,7 +87,7 @@ const PostJobs = () => {
 
   return (
     <div>
-      <h1 className='gradient-title font-extrabold text-5xl sm:text-7xl text-center pb-8'>
+      <h1 className='gradient-title font-extrabold text-3xl sm:text-5xl lg:text-7xl text-center pb-8'>
         Post a Job
       </h1>
 
@@ -100,13 +100,13 @@ const PostJobs = () => {
       {errors.description && <p className='text-red-500'>{errors.description.message}</p>}
 
 
-    <div className='flex gap-4 items-center'>
+    <div className='flex flex-col sm:flex-row gap-4 items-stretch sm:items-center'>
       <Controller 
       name='location'
       control={control}
       render={({field}) => (
           <Select value={field.value} onValueChange={field.onChange}>
-       <SelectTrigger>
+       <SelectTrigger className='w-full'>
       <SelectValue placeholder="Filter by Location" />
        </SelectTrigger>
        <SelectContent>
@@ -127,7 +127,7 @@ const PostJobs = () => {
       control={control}
       render={({field}) => (
      <Select  value={field.value} onValueChange={field.onChange}>
-       <SelectTrigger>
+       <SelectTrigger className='w-full'>
        <SelectValue placeholder="Filter by Company">
         {field.value?companies?.find((com)=> com.id === Number(field.value))
         ?.name:"company"}

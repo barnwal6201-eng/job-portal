@@ -47,7 +47,7 @@ const JobCard = ({
       }
 
       useEffect(()=>{
-        if(savedJob!==undefined)setSaved(savedJob.length > 0);
+        if(savedJob!==undefined)setSaved(savedJob?.length > 0);
       },[savedJob]);
     
   return <Card className="flex flex-col">
@@ -73,7 +73,7 @@ const JobCard = ({
         </div>
        </div>
        <hr />
-       {job.description.substring(0, job.description.indexOf("."))}
+       {job?.description?.substring(0, job?.description?.indexOf("."))}
     </CardContent>
     <CardFooter className="flex gap-2">
         <Link to={`/job/${job.id}`} className='flex-1'>

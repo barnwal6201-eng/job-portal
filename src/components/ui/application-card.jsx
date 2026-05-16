@@ -70,7 +70,7 @@ const ApplicationCard = ({ application, isCandidate = false }) => {
         </div>
         <hr />
       </CardContent>
-      <CardFooter className="flex justify-between">
+      <CardFooter className="flex flex-col sm:flex-row gap-2 sm:justify-between">
         <span>{new Date(application?.created_at).toLocaleString()}</span>
         {isCandidate ? (
           <span className="capitalize font-bold">
@@ -81,7 +81,7 @@ const ApplicationCard = ({ application, isCandidate = false }) => {
             onValueChange={handleStatusChange}
             defaultValue={application.status}
           >
-            <SelectTrigger className="w-52">
+            <SelectTrigger className="w-full sm:w-52">
               <SelectValue placeholder="Application Status" />
             </SelectTrigger>
             <SelectContent>
